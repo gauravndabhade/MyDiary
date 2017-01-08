@@ -12,7 +12,7 @@
 
 
     <TextView
-        android:text="Enter Your Data"
+        android:text="@string/main_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -25,7 +25,7 @@
         android:textSize="32sp"/>
 
     <TextView
-        android:text="Enter Name "
+        android:text="@string/enter_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ttitle"
@@ -50,7 +50,7 @@
 
 
     <TextView
-        android:text="Enter Phone No."
+        android:text="@string/enter_phone_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText_name"
@@ -73,7 +73,7 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Enter Email"
+        android:text="@string/enter_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText_phone"
@@ -94,7 +94,7 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="Clear"
+        android:text="@string/clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/BtnSubmit"
@@ -103,7 +103,7 @@
         android:id="@+id/BtnClear" />
 
     <Button
-        android:text="Submit"
+        android:text="@string/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="79dp"

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MyDiary</string>
+    <string name="title">Contact Inforrmation</string>
+    <string name="name">Name</string>
+    <string name="phone_no">Phone No.</string>
+    <string name="email">Email</string>
+    <string name="main_title">Enter Contact Details</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_phone_no">Enter Phone No.</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="clear">Clear</string>
+    <string name="submit">Submit</string>
 </resources>

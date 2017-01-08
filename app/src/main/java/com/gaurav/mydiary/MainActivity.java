@@ -33,9 +33,23 @@ public class MainActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ename.equals("") || ephone.equals("") || eemail.equals("")) {
-                    Toast.makeText(getApplicationContext(), "Please Fill All Data", Toast.LENGTH_SHORT).show();
-                } else {
+                if (ename.getText().toString().matches("")){
+                    Toast.makeText(getApplicationContext(), ename.getText()+"  Please,Enter Your Name.", Toast.LENGTH_SHORT).show();
+                }
+                else if(ephone.getText().toString().matches("")){
+                    Toast.makeText(getApplicationContext(), "Please, Enter Your Phone No.", Toast.LENGTH_SHORT).show();
+                }
+                else if(eemail.getText().toString().matches(""))                {
+                    Toast.makeText(getApplicationContext(), "Please, Enter Email.", Toast.LENGTH_SHORT).show();
+                }
+                else if(!Validation.isValidPhoneNumber(ephone.getText())) {
+                    Toast.makeText(getApplicationContext(), "Invalid Phone No.", Toast.LENGTH_SHORT).show();
+                }
+                else if (!Validation.isValidEmail(eemail.getText().toString())) {
+                    Toast.makeText(getApplicationContext(), "Invalid Email address.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+
                     Person gaurav = new Person(ename.getText().toString(), ephone.getText().toString(), eemail.getText().toString());
                     Intent i = new Intent(getApplicationContext(), Display.class);
                     i.putExtra("send_Object", gaurav);
@@ -58,6 +72,25 @@ public class MainActivity extends AppCompatActivity {
         ephone.setText("");
         eemail.setText("");
         ename.requestFocus();
+    }
+
+}
+class Validation {
+
+    public final static boolean isValidEmail(CharSequence target) {
+        if (target == null) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+        }
+    }
+
+    public static final boolean isValidPhoneNumber(CharSequence target) {
+        if (target.length()!=10) {
+            return false;
+        } else {
+            return android.util.Patterns.PHONE.matcher(target).matches();
+        }
     }
 
 }
